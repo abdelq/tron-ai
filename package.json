@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node tron.js"
+  },
+  "dependencies": {
+    "socket.io-client": "^1.7.2"
+  }
+}

@@ -1,3 +1,7 @@
+/* Configuration */
+const room = '';
+const team = '';
+
 // État
 let grid;
 let direction;
@@ -25,7 +29,7 @@ function setGrid(grid, x, y, value) {
   }
 }
 
-function createGrid(config) {
+function start(config) {
   grid = Array(config.h).fill().map(() => Array(config.w).fill(0));
 
   // Joueurs
@@ -192,7 +196,7 @@ function alphaBeta(grid, me, them, alpha, beta, depth, firstMove) {
   return [alpha, bestMove];
 }
 
-function nextMove(prevMoves) {
+function next(prevMoves) {
   const startTime = process.hrtime();
 
   if (prevMoves.length) {
@@ -226,7 +230,7 @@ function nextMove(prevMoves) {
   return direction;
 }
 
-function victory(winnerID) {
+function end(winnerID) {
   if (winnerID === me.id) {
     console.log('Match gagné');
   } else if (winnerID === them.id) {
@@ -235,3 +239,6 @@ function victory(winnerID) {
     console.log('Match nul');
   }
 }
+
+// Ne pas modifier
+module.exports = { room, team, start, next, end };
