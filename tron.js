@@ -22,5 +22,6 @@ socket.on('end', function (winnerID) {
 });
 
 socket.on('disconnect', function () {
+  console.log("Vous avez été déconnecté");
   process.exit();
 });
