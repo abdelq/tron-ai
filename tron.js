@@ -5,7 +5,7 @@ const socket = io('http://localhost:1337');
 
 socket.on('connect', function () {
   socket.emit('join', ai.room, ai.team);
-  console.log('Lien vers le match : http://localhost:1337/' + (ai.room || 'null'));
+  console.log(`Lien vers le match : http://localhost:1337/${ai.room}`);
 });
 
 socket.on('start', function (config) {
